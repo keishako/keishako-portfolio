@@ -29,28 +29,28 @@ export default function AboutSection() {
                 <h3 className="text-2xl font-semibold mb-6 text-sky-500">Skills</h3>
             <div className="space-y-5">
                 <div>
-                    <p className="mb-1 font-medium">C</p>
+                    <p className="mb-1 font-medium text-black">C</p>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                         <div className="bg-sky-500 h-3 rounded-full w-[20%]"></div>
                     </div>
                 </div>
 
                 <div>
-                    <p className="mb-1 font-medium">HTML</p>
+                    <p className="mb-1 font-medium text-black">HTML</p>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                         <div className="bg-sky-500 h-3 rounded-full w-[10%]"></div>
                     </div>
                 </div>
 
                 <div>
-                    <p className="mb-1 font-medium">CSS</p>
+                    <p className="mb-1 font-medium text-black">CSS</p>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                         <div className="bg-sky-500 h-3 rounded-full w-[10%]"></div>
                     </div>
                 </div>
 
                 <div>
-                    <p className="mb-1 font-medium">Figma</p>
+                    <p className="mb-1 font-medium text-black">Figma</p>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                         <div className="bg-sky-500 h-3 rounded-full w-[10%]"></div>
                     </div>
