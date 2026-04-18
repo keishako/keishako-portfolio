@@ -19,14 +19,14 @@ export default function BlogPage() {
     return (
         <main className="py-24 px-8 md:px-20 bg-white min-h-screen">
             <div className="max-w-5xl mx-auto">
-                <div className="mb-8 animate-bounce">
+                <div className="mb-8 animate-bounce text-black">
                     <Link href="/" className="hover:underline">
                         ← Back to Home
                     </Link>
                 </div>
                 
                 <div className="text-center mb-16">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-4 text-black">
                         Keisha's <span className="text-sky-500">Blog</span>
                     </h1>
                     <p className="text-gray-700 max-w-2xl mx-auto">

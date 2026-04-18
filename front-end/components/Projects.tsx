@@ -3,7 +3,7 @@ export default function Projects() {
         <section id="projects" className="py-24 px-8 md:px-20 bg-white">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <h1 className="text-3xl md:text-4xl font-bold mb-6">
+                    <h1 className="text-3xl md:text-4xl font-bold mb-6 text-black">
                         Featured <span className="text-sky-500"> Projects</span>
                     </h1>
                     <p className="text-gray-700 max-w-2xl mx-auto">

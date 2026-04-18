@@ -4,7 +4,7 @@ export default function AboutSection() {
     
     <div className="mx-auto max-w-5xl">
         <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-black">
                 About <span className="text-sky-500"> Me</span>
             </h1>
 
@@ -20,7 +20,7 @@ export default function AboutSection() {
         </div>
 
         <div>
-            <h2 className="text-center text-2xl md:text-3xl font-bold mb-10">
+            <h2 className="text-center text-2xl md:text-3xl font-bold mb-10 text-black">
                 Skills & Experiences
             </h2>
 

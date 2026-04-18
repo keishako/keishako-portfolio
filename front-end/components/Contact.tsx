@@ -9,9 +9,11 @@ export default function Contact() {
         message: "",
     });
 
-    const [submitted, setSubmitted] = useState(false);
+    const [success, setSuccess] =useState(false);
 
-    const handleChange = (e: any) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -20,37 +22,28 @@ export default function Contact() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        
-        try {
-        const response = await fetch("http://localhost:5000/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
 
-        const data = await response.text();
-        console.log(data);
+    const response = await fetch("https://formspree.io/f/xojydgal", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
 
-        alert("Message sent!");
-
-        setFormData({
-            name: "",
-            email: "",
-            message: "",
-        });
-
-    } catch (error) {
-            console.error("Error:", error);
-            alert("Something went wrong.");
-        }
-    };
+    if(response.ok) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: ""});
+    } else {
+        alert("Something went wrong.");
+    }
+};
 
     return (
         <section id="contact" className="py-24 px-8 md:px-20 bg-white">
             <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                     Contact <span className="text-sky-500">Me</span>
                 </h1>
                 <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -72,6 +65,8 @@ export default function Contact() {
                         GitHub: {" "}
                         <a
                         href="https://github.com/keishako"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sky-500 hover:underline">
                             https://github.com/keishako
                         </a>
@@ -81,6 +76,8 @@ export default function Contact() {
                         LinkedIn: {" "}
                         <a
                         href="https://www.linkedin.com/in/keishako/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sky-500 hover:underline">
                             https://www.linkedin.com/in/keishako/
                         </a>
@@ -88,17 +85,20 @@ export default function Contact() {
                 </div>
 
                 <div className="bg-white rounded-2xl max-w-2xl w-full shadow-md p-8 mx-auto mt-10">
-                    <h2 className="text-3xl font-bold text-center mb-6">
+                    <h2 className="text-3xl font-bold text-center mb-6 text-black">
                         Send Me a Message
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form 
+                        onSubmit={handleSubmit}
+                        className="space-y-4 text-black">
                         <input
                             type="text"
                             name="name"
                             placeholder="Your Name"
                             value={formData.name}
                             onChange={handleChange}
+                            required
                             className="w-full border p-3 rounded-lg"/>
                         <input
                             type="email"
@@ -106,24 +106,26 @@ export default function Contact() {
                             placeholder="Your Email"
                             value={formData.email}
                             onChange={handleChange}
+                            required
                             className="w-full border p-3 rounded-lg"/>
                         <textarea
                             name="message"
                             placeholder="Your Message"
                             value={formData.message}
                             onChange={handleChange}
+                            required
                             className="w-full border p-3 rounded-lg h-32"/>
                         <button
                             type="submit"
-                            className="w-full bg-sky-500 text-white py-3 rounded-lg">
+                            className="w-full bg-sky-500 text-white py-3 rounded-lg hover:bg-sky-600 transition">
                             Send Message
                         </button>
                     </form>
 
-                    {submitted && (
-                    <p className="text-green-600 mt-4 text-center">
-                         Message sent!
-                    </p>
+                    {success && (
+                        <p className="text-green-600 mt-4 text-center">
+                            Message sent!
+                        </p>
                     )}
 
                 </div>

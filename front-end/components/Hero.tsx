@@ -1,7 +1,7 @@
 export default function Hero() {
     return <section 
     id="home" 
-    className="min-h-screen flex items-center px-8 md:px-20 pt-15 pb-16 relative"
+    className="min-h-screen flex items-center px-8 md:px-20 pt-15 pb-16 relative bg-white"
     >
         <div className="max-w-3xl mx-auto flex flex-col items-center justify-center text-center gap-6">
         <div className="space-y-6 text-center">
@@ -35,7 +35,7 @@ export default function Hero() {
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
             <span className="text-base text-black"> Scroll</span>
-            <span className="text-base animated-bounce">↓</span>
+            <span className="text-base animated-bounce text-black">↓</span>
         </div>
 
     </section>
